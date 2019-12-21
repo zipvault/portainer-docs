@@ -39,6 +39,13 @@ For the manager node:
 
 * 2377/tcp
 
+If using UFW Specify /tcp or /udp like this:
+
+..'''sudo ufw allow 4789/udp && sudo ufw allow 2377/tcp && sudo ufw allow 2376/udp && sudo ufw allow 4722/tcp && sudo ufw reload && sudosystemctl restart docker'''..
+
+In order to allow portainer agents to talk to docker
+
+
 Next, make sure you are using the ``--advertise-addr`` option.
 
 - When creating the cluster via ``docker swarm init``, use ``--advertise-addr`` with either the private IP address or NIC name directly (``--advertise-addr eth1`` for example)
